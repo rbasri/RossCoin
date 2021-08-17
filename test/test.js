@@ -8,8 +8,8 @@ describe("DLKToken", function () {
     const accounts = await ethers.provider.listAccounts();
     addr1 = accounts[0];
     addr2 = accounts[1];
-    const DLKToken = await ethers.getContractFactory("DLKToken");
-    token = await DLKToken.deploy(initialSupply);
+    const RossCoin = await ethers.getContractFactory("RossCoin");
+    token = await RossCoin.deploy(initialSupply);
     await token.deployed();
   });
 

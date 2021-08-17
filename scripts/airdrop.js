@@ -5,19 +5,19 @@ const friends = [
     "0x2c7D9E0e01d13f4a9313AEdbF98A9C570f5d2928",
     "0x7Fa1ee5AdAA1AEA9093B7b4fd57a5Db8230346Dc",
     "0x4F2dF8b4D24ef906D460383A61289CEf4E047df5",
-    "0xbF86cD37c6b92D14Ea084711a026dB9e469673eE",
+    //"0xbF86cD37c6b92D14Ea084711a026dB9e469673eE",
     "0x83cE74429510C1243E15207957fA3E004331e291",
     "0x364437a3705bD91736eF94257cCc680EF3BEC81b",
     "0x6368CD30cc23277CF1886841E138e864e11d1981",
     "0x7c8A0f7f04C28E8aFDBD7cde9903Ba413E883324",
 ];
-const existingContractAddr = "0xe45492088775586B2965cfc5a27941fF05B317E1";
+const existingContractAddr = "0xb321b2ef2a2f260b01b971d16e20e0f6706d7220";
 
 async function main() {
-  const token = await hre.ethers.getContractAt("DLKToken", existingContractAddr);
+  const token = await hre.ethers.getContractAt("RossCoin", existingContractAddr);
 
   for(let i = 0; i < friends.length; i++) {
-    const amount = ethers.utils.parseEther("80");
+    const amount = ethers.utils.parseEther("200");
     await token.transfer(friends[i], amount);
   }
 }
